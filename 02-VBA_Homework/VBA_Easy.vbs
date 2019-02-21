@@ -1,4 +1,7 @@
-'### Easy
+'### Easy Method (Press Run Worksheet and it goes through all the Worksheets)
+'
+'------------------------------------------------------------------------------
+'INSTRUCTIONS
 '
 '* Create a script that will loop through each year of stock data and grab
 '  the total amount of volume each stock had over the year.
@@ -6,8 +9,11 @@
 '* You will also need to display the ticker symbol to coincide with the total volume.
 '
 '* Your result should look as follows (note: all solution images are for 2015 data).
+'------------------------------------------------------------------------------
+'Begin My Code (Timed at 12 seconds using a PC with a 4Ghz 6700K @ 32 gig of ram, 25 seconds on a macbook pro 13" with 2Ghz and 8 gigs of ram for the 100MB excel file)
+'------------------------------------------------------------------------------
 
-
+' Create the Program called StockSum
 Sub StockSum()
   ' Loop through each worksheet
   For Each ws In Worksheets
@@ -15,11 +21,11 @@ Sub StockSum()
   ' create variable for holding stock ticker symbol - Letters
   Dim StockSymbol As String
 
-  ' create a counter variable for holding total stock volume - Long Integer
+  ' create a counter variable for holding total stock volume - Double Integer (Long didn't work)
   Dim TickerVolume As Double
   TickerVolume = 0
 
-  ' variable for holding stock volume data in rows starting after header row 1 - Long Integer
+  ' variable for holding stock volume data in rows starting after header row 1 - Integer
   Dim StockSummaryRow As Integer
   StockSummaryRow = 2
   
@@ -33,21 +39,18 @@ Sub StockSum()
     
 
 
-        ' --------------------------------------------
-        ' Add Column Headers To Each Worksheet
-        ' --------------------------------------------
+' --------------------------------------------
+' Add Column Headers To Each Worksheet
+' --------------------------------------------
 
     
     'Add both headers to first row, column 9, 10
     ws.Cells(1, 9).Value = StockSymbolHeader
     ws.Cells(1, 10).Value = TotalStockVolume
    
-        ' --------------------------------------------
-        ' Add Stock Ticker and Sum of Volume
-        ' --------------------------------------------
-   
-       
-       
+' --------------------------------------------
+' Add Stock Ticker and Sum of Volume
+' --------------------------------------------
     
     ' Determine the Last Row
     LastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
