@@ -33,3 +33,20 @@
 #  ```
 #
 #* In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+
+#----------------------------------------Begin Project---------------------------------
+#import needed libraries
+from pathlib import Path, PureWindowsPath #universal file finder, the os module does not work well.. 
+import csv #to import csv files
+
+filename = PureWindowsPath("Resources\\budget_data.csv")
+budget_csv = Path(filename)
+
+#open the csvfile
+with open(budget_csv, newline="") as csvfile:
+    #let the csv reader know the variable name and delimiter, and make it a dictionary
+    reader = csv.DictReader(csvfile, delimiter=",")
+    for row in reader:
+        dates = (row['Date'])
+        month_count = sum(map(len, dates.values()))
+        print(month_count)
