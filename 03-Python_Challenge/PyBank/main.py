@@ -36,11 +36,12 @@
 
 #----------------------------------------Begin Project---------------------------------
 #import needed libraries
-from pathlib import Path, PureWindowsPath #universal file finder, the os module does not work well.. 
+#from pathlib import Path, PureWindowsPath #universal file finder, the os module does not work well.. 
+import os
 import csv #to import csv files
 
-filename = PureWindowsPath("Resources\\budget_data.csv")
-budget_csv = Path(filename)
+#filename = PureWindowsPath("Resources\\budget_data.csv")
+budget_csv = os.path.join = ("..", "Resources", "budget_data.csv")
 
 #open the csvfile
 with open(budget_csv, newline="") as csvfile:
