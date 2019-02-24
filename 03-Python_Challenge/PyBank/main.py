@@ -26,7 +26,6 @@
 
 #----------------------------------------Begin Project---------------------------------
 #import needed libraries
-<<<<<<< HEAD
 
 import os
 import csv
