@@ -26,6 +26,7 @@
 
 #----------------------------------------Begin Project---------------------------------
 #import needed libraries
+<<<<<<< HEAD
 
 import os
 import csv
@@ -64,4 +65,3 @@ with open(csv_file, newline="") as csvfile:
     #print total of objects in list
     print(len(date_list))
 
-    
