@@ -1,13 +1,3 @@
-### PyBank
-#
-#![Revenue](Images/revenue-per-lead.jpg)
-#
-# In this challenge, you are tasked with creating a Python script for analyzing the financial records of your company. 
-# 
-# You will give a set of financial data called [budget_data.csv](PyBank/Resources/budget_data.csv). 
-# The dataset is composed of two columns: `Date` and `Profit/Losses`. 
-# (Thankfully, your company has rather lax standards for accounting so the records are simple.)
-#
 #* Your task is to create a Python script that analyzes the records to calculate each of the following:
 #
 #  * The total number of months included in the dataset
@@ -20,7 +10,7 @@
 #
 #  * The greatest decrease in losses (date and amount) over the entire period
 #
-#* As an example, your analysis should look similar to the one below:
+#  * As an example, your analysis should look similar to the one below:
 #
 #  ```text
 #  Financial Analysis
@@ -36,17 +26,42 @@
 
 #----------------------------------------Begin Project---------------------------------
 #import needed libraries
-from pathlib import Path, PureWindowsPath #universal file finder, the os module does not work well.. 
-import csv #to import csv files
 
-filename = PureWindowsPath("Resources\\budget_data.csv")
-budget_csv = Path(filename)
+import os
+import csv
 
-#open the csvfile
-with open(budget_csv, newline="") as csvfile:
-    #let the csv reader know the variable name and delimiter, and make it a dictionary
-    reader = csv.DictReader(csvfile, delimiter=",")
-    for row in reader:
-        dates = (row['Date'])
-        month_count = sum(map(len, dates.values()))
-        print(month_count)
+
+
+#open and read csv file
+csv_file = os.path.join("Resources", "budget_data.csv")
+
+# Open and read csv
+with open(csv_file, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    
+    # Read the header row first (skip this part if there is no header)
+    csv_header = next(csvfile)
+
+    #split the headers
+    headers=csv_header.split(',')
+    #print('headers split up:', headers)
+
+    date_index=headers.index('Date')
+    #print('Date is in index:', date_index)
+
+    p_l_index=headers.index('Profit/Losses\r\n')
+    #print('Profit and Losses is in index:', p_l_index)
+    date_list = []
+    p_l_list = []
+#  * The total number of months included in the dataset
+    #create loop that appends date index into list
+    for row in csvreader:
+        date = row[0]
+        p_l = row[1]
+    #append them to the new list
+        date_list.append(date)
+        p_l_list.append(p_l)
+    #print total of objects in list
+    print(len(date_list))
+
+    
