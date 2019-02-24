@@ -29,8 +29,10 @@
 
 import os
 import csv
+from decimal import Decimal
 
-
+title = "Financial Analysis"
+lines = "----------------------------"
 
 #open and read csv file
 csv_file = os.path.join("Resources", "budget_data.csv")
@@ -61,6 +63,18 @@ with open(csv_file, newline="") as csvfile:
     #append them to the new list
         date_list.append(date)
         p_l_list.append(p_l)
+
+    #do math on index 1 to add them all together
+    p_l_total = list(map(int, p_l_list))
+    
+    average_change = (sum(p_l_total))/((len(date_list)))
+    print(average_change)
+
+
     #print total of objects in list
-    print(len(date_list))
+    #print(title)
+    #print(lines)
+    #print("Total Months: " + str(len(date_list)))
+    #print("Total: " + str(sum(p_l_total)))
+
 
