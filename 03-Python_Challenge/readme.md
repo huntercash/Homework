@@ -27,8 +27,6 @@
 
 ## PyPoll Election Data
 
-  * Your task is to create a Python script that analyzes the votes and calculates each of the following:
-
   * The total number of votes cast
 
   * A complete list of candidates who received votes
@@ -38,7 +36,7 @@
   * The total number of votes each candidate won
 
   * The winner of the election based on popular vote.
-  
+
   * With PyBank/Resources/budget_data.csv 
 
   * As an example, your analysis should look similar to the one below:
