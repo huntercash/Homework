@@ -15,7 +15,6 @@ text_file_output = os.path.join("analysis.txt")
 # Open and read csv
 with open(csv_file, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    
     # Read the header row first (skip this part if there is no header)
     csv_header = next(csvfile)
 
@@ -26,7 +25,7 @@ with open(csv_file, newline="") as csvfile:
     date_index=headers.index('Date')
     #print('Date is in index:', date_index)
 
-    p_l_index=headers.index('Profit/Losses\r\n')
+    #p_l_index=headers.index('Profit/Losses')
     #print('Profit and Losses is in index:', p_l_index)
     date_list = []
     p_l_list = []
@@ -55,11 +54,14 @@ with open(csv_file, newline="") as csvfile:
     
     max_change = max(average_of_changes_list)
     min_change = min(average_of_changes_list)
+
+    max_change_date = date_list[1:]
+    min_change_date = date_list[1:]
     
-    max_change_date = str(date_list[average_of_changes_list.index(max(average_of_changes_list))])
+    max_change_date = str(max_change_date[average_of_changes_list.index(max(average_of_changes_list))])
     
     
-    min_change_date = str(date_list[average_of_changes_list.index(min(average_of_changes_list))])
+    min_change_date = str(min_change_date[average_of_changes_list.index(min(average_of_changes_list))])
     #print(average_of_changes_list)
     
     #print total of objects in list
