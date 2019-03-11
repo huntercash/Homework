@@ -9,8 +9,8 @@
 ### Bubble Plot of Ride Sharing Data
 ![Fares Vs Rider Vs Drivers](figures/2018_by_city.png)
 ### Total Fares by City Type
-![Amount of drivers by city](2018_drivers_by_city.png)
+![Amount of drivers by city](figures/2018_drivers_by_city.png)
 ### Total Rides by City Type
-![Amount of fares by city](2018_fares_by_city.png)
+![Amount of fares by city](figures/2018_fares_by_city.png)
 ### Total Drivers by City Type
-![Ride by City](2018_rides_by_city.png)
+![Ride by City](figures/2018_rides_by_city.png)
