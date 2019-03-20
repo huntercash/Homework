@@ -2,3 +2,5 @@
 .DS_Store
 .vscode/settings.json
 05-MatPlotLib/.ipynb_checkpoints/pyber-checkpoint.ipynb
+06-Python-APIs/.ipynb_checkpoints/WeatherPy-checkpoint.ipynb
+06-Python-APIs/api_keys.py
